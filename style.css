@@ -40,8 +40,14 @@ body{
 }
 .tails{
     transform: rotateX(180deg);
-    justify-content: space-between;
 }
+.buttons{
+    justify-content: space-between;
+    display: flex;
+}
+
+
+
 .heads img{
     border-radius: 200px;
 }
@@ -57,7 +63,7 @@ body{
     width: 100%;
     height: 100%;
     position: absolute;
-   
+   backface-visibility: hidden;
 }
 button{
     width: 119px;
@@ -65,4 +71,39 @@ button{
     border: 3px solid #31511E;
     border-radius: 5px;
     cursor: pointer;
+}
+#flip-coin{
+    background-color: #31511E;
+    color: antiquewhite;
+}
+#flip-coin:hover{
+    color: #31511E;
+    background-color: antiquewhite;
+    transition: 0.3s all;
+    transform: translateY(-3px);
+}
+#flip-coin:disabled{
+    background-color: antiquewhite;
+    border-color: brown;
+    color: #1A1A19;
+}
+#reset-stats{
+    background-color: antiquewhite;
+    color: #1A1A19;
+}
+@keyframes spin-tails{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(2700deg);
+    }
+}
+@keyframes spin-heads{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(2160deg);
+    }
 }
